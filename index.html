@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Consulenza finanziaria per aziende vitivinicole e cantine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#3E1420;
+    --wine-2:#4E1A29;
+    --ink:#1A1A18;
+    --cream:#F7F5EF;
+    --stone:#8B8A82;
+    --gold:#B08D57;
+    --gold-dark:#8A6A3E;
+    --hairline:rgba(15,27,43,0.12);
+    --hairline-onwine:rgba(247,245,239,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:'Inter', sans-serif; background:var(--cream); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:520px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:'Playfair Display', serif; font-weight:600; line-height:1.2; color:inherit;}
+  .eyebrow{font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-dark);}
+  a{color:inherit;}
+  .placeholder{color:var(--stone); font-style:italic;}
+
+  .lockup{display:flex; align-items:center; gap:16px; margin-bottom:40px;}
+  .lockup-text{font-family:'Playfair Display', serif; font-size:14px; letter-spacing:0.05em; font-weight:600;}
+  .lockup-text .sub{display:block; font-family:'Inter'; font-size:10.5px; font-weight:400; letter-spacing:0.03em; color:rgba(247,245,239,0.55); margin-top:3px;}
+
+  .hero{background:var(--wine); color:var(--cream); padding:40px 0 44px;}
+  .hero h1{font-size:32px; margin:16px 0 16px; letter-spacing:-0.01em;}
+  .hero p.lead{font-size:15.5px; color:rgba(247,245,239,0.75); max-width:42ch; margin-bottom:28px;}
+  .cta-btn{
+    display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:var(--wine);
+    font-weight:600; font-size:14.5px; padding:14px 22px; border-radius:2px; text-decoration:none; width:100%; justify-content:center;
+  }
+  .cta-sub{display:block; text-align:center; font-size:12.5px; color:rgba(247,245,239,0.55); margin-top:12px;}
+
+  section{padding:48px 0;}
+  section.light{background:var(--cream);}
+  section.white{background:#fff;}
+  h2.section-title{font-size:23px; margin:12px 0 18px; letter-spacing:-0.01em;}
+  p.body-text{font-size:15px; color:#3A3A36; margin-bottom:14px;}
+
+  .question-list{list-style:none; margin-top:6px;}
+  .question-list li{padding:16px 0; border-bottom:1px solid var(--hairline); font-size:15px;}
+  .question-list li b{display:block; font-weight:600; margin-bottom:3px;}
+  .question-list li span{font-size:13.5px; color:var(--stone);}
+
+  .card-grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:20px;}
+  .service-card{border:1px solid var(--hairline); border-radius:4px; padding:20px; background:#fff;}
+  .service-card .num{font-family:'Playfair Display', serif; font-style:italic; color:var(--gold-dark); font-size:13px;}
+  .service-card h3{font-size:16.5px; margin:6px 0 6px;}
+  .service-card p{font-size:13.5px; color:var(--stone);}
+
+  .why-list{margin-top:8px;}
+  .why-item{display:flex; gap:14px; padding:16px 0; border-top:1px solid var(--hairline);}
+  .why-item:last-child{border-bottom:1px solid var(--hairline);}
+  .why-mark{width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;}
+  .why-item h3{font-size:15.5px; margin-bottom:3px;}
+  .why-item p{font-size:13.5px; color:var(--stone);}
+
+  .case-box{background:var(--wine); color:var(--cream); border-radius:6px; padding:26px 22px; margin-top:18px;}
+  .case-row{padding:14px 0; border-top:1px solid var(--hairline-onwine);}
+  .case-row:first-child{border-top:none; padding-top:0;}
+  .case-row .case-label{font-family:'Playfair Display', serif; font-style:italic; color:var(--gold); font-size:13px; display:block; margin-bottom:5px;}
+  .case-row p{font-size:14px; color:rgba(247,245,239,0.85);}
+
+  .profile-row{display:flex; gap:16px; align-items:flex-start; margin-top:16px;}
+  .photo-slot{
+    width:84px; height:84px; border-radius:50%; border:1px dashed var(--stone); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:9px; color:var(--stone); text-align:center; line-height:1.3;
+  }
+  .profile-text h3{font-size:17px; margin-bottom:4px;}
+  .profile-text p.role{font-size:12.5px; color:var(--gold-dark); margin-bottom:8px; font-weight:600; letter-spacing:0.02em;}
+
+  .faq-item{padding:18px 0; border-top:1px solid var(--hairline);}
+  .faq-item:last-child{border-bottom:1px solid var(--hairline);}
+  .faq-item h3{font-family:'Inter'; font-weight:600; font-size:15px; margin-bottom:6px;}
+  .faq-item p{font-size:14px; color:#3A3A36;}
+
+  .final-cta{background:var(--wine); color:var(--cream); border-radius:6px; padding:32px 24px; text-align:center;}
+  .final-cta h2{color:var(--cream); font-size:22px; margin-bottom:18px;}
+  .phone-big{font-size:19px; letter-spacing:0.02em; color:var(--gold); margin-bottom:16px; font-weight:600;}
+
+  footer{padding:36px 0 30px; background:#fff; border-top:1px solid var(--hairline);}
+  .foot-lockup{font-family:'Playfair Display'; font-size:14px; margin-bottom:16px;}
+  .foot-grid{font-size:13px; color:#3A3A36;}
+  .foot-grid div{padding:8px 0; border-top:1px solid var(--hairline);}
+  .foot-grid div:first-child{border-top:none;}
+  .foot-grid .k{color:var(--stone); font-size:11px; text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:2px;}
+  footer .disclaimer{font-size:10.5px; color:var(--stone); line-height:1.7; margin-top:24px;}
+
+  @media (min-width:600px){
+    .hero h1{font-size:40px;}
+    .wrap{padding:0 32px;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="lockup">
+      <svg width="40" height="40" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="22" cy="22" r="21" fill="none" stroke="#B08D57" stroke-width="1"/>
+        <circle cx="22" cy="22" r="17.5" fill="none" stroke="#B08D57" stroke-width="0.5" opacity="0.5"/>
+        <path d="M22 12 C 20 15, 24 16, 22 19" fill="none" stroke="#B08D57" stroke-width="0.9"/>
+        <path d="M22 12 C 17 10.5, 14.5 13, 16 16.5 C 18.5 15.5, 21 14, 22 12 Z" fill="none" stroke="#B08D57" stroke-width="0.9"/>
+        <circle cx="22" cy="20.5" r="2" fill="#B08D57"/>
+        <circle cx="18.7" cy="23.2" r="2" fill="#B08D57"/>
+        <circle cx="25.3" cy="23.2" r="2" fill="#B08D57"/>
+        <circle cx="20.8" cy="26" r="2" fill="#B08D57"/>
+        <circle cx="23.4" cy="26" r="2" fill="#B08D57"/>
+        <circle cx="22" cy="28.8" r="2" fill="#B08D57"/>
+      </svg>
+      <div class="lockup-text">VENDEMMIA&nbsp;DEL&nbsp;PATRIMONIO<span class="sub">FIDEURAM Private Banking</span></div>
+    </div>
+
+    <h1>Consulenza finanziaria per aziende vitivinicole e cantine</h1>
+    <p class="lead">Aiutiamo le cantine e le aziende vitivinicole a pianificare investimenti, gestire la liquidità e proteggere il patrimonio aziendale.</p>
+
+    <a class="cta-btn" href="tel:+393355493857">Chiama per una consulenza gratuita</a>
+    <span class="cta-sub">335 5493857 — nessuna prenotazione online, solo una telefonata diretta</span>
+  </div>
+</section>
+
+<!-- IL PROBLEMA -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">Le sfide del settore</span>
+    <h2 class="section-title">Conosciamo le sfide della tua cantina.</h2>
+    <p class="body-text">Chi guida un'azienda vitivinicola si confronta ogni giorno con decisioni che hanno un impatto diretto sui conti e sul futuro dell'impresa. Ecco i temi che incontriamo più spesso:</p>
+    <ul class="question-list">
+      <li><b>Investimenti in vigneto e cantina</b><span>Quando conviene acquistare nuovi impianti, botti o tecnologie, e come finanziarli.</span></li>
+      <li><b>Gestione della liquidità</b><span>Come affrontare la stagionalità delle entrate tipica del settore, senza lasciare la cassa infruttifera.</span></li>
+      <li><b>Tempi di incasso</b><span>Come pianificare la finanza aziendale quando distributori e GDO pagano con termini lunghi.</span></li>
+      <li><b>Variabilità dell'annata</b><span>Come proteggersi dalle oscillazioni di raccolto e dai costi di vetro, tappi ed energia.</span></li>
+      <li><b>Crescita dell'azienda</b><span>Come finanziare nuovi ettari o l'ingresso in nuovi mercati export senza indebolire la solidità patrimoniale.</span></li>
+      <li><b>Passaggio generazionale</b><span>Come organizzare per tempo il passaggio dell'azienda agricola e del patrimonio ai familiari.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- COME POSSIAMO AIUTARTI -->
+<section class="white">
+  <div class="wrap">
+    <span class="eyebrow">I nostri servizi</span>
+    <h2 class="section-title">Come possiamo aiutarti</h2>
+    <div class="card-grid">
+      <div class="service-card">
+        <span class="num">01</span>
+        <h3>Pianificazione finanziaria</h3>
+        <p>Una visione d'insieme su cantina e patrimonio personale, con obiettivi chiari e verificabili nel tempo.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">02</span>
+        <h3>Gestione della liquidità</h3>
+        <p>Strutturiamo la cassa aziendale tenendo conto della stagionalità tipica della vendemmia e delle vendite.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">03</span>
+        <h3>Investimenti aziendali</h3>
+        <p>Supporto nella valutazione finanziaria di nuovi vigneti, impianti di cantina o espansioni produttive.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">04</span>
+        <h3>Tutela del patrimonio</h3>
+        <p>Protezione del patrimonio personale e aziendale da imprevisti, rischi di settore e passaggio generazionale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCHE SCEGLIERE NOI -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">Perché sceglierci</span>
+    <h2 class="section-title">Perché scegliere noi</h2>
+    <div class="why-list">
+      <div class="why-item"><div class="why-mark"></div><div><h3>Conosciamo il settore</h3><p>Esperienza diretta con aziende vitivinicole e cantine del territorio.</p></div></div>
+      <div class="why-item"><div class="why-mark"></div><div><h3>Soluzioni personalizzate</h3><p>Nessun prodotto standard: ogni percorso è costruito sulla situazione reale dell'azienda.</p></div></div>
+      <div class="why-item"><div class="why-mark"></div><div><h3>Collaborazione con commercialisti e altri professionisti</h3><p>Lavoriamo insieme al tuo commercialista e ai tuoi consulenti di fiducia, senza sovrapposizioni.</p></div></div>
+      <div class="why-item"><div class="why-mark"></div><div><h3>Approccio orientato agli obiettivi</h3><p>Partiamo sempre da cosa vuoi ottenere tu, non da cosa dobbiamo vendere noi.</p></div></div>
+      <div class="why-item"><div class="why-mark"></div><div><h3>Relazione continuativa</h3><p>Il rapporto prosegue nel tempo, con revisioni periodiche e disponibilità diretta.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO STUDIO -->
+<section class="white">
+  <div class="wrap">
+    <span class="eyebrow">Un esempio concreto</span>
+    <h2 class="section-title">Caso studio</h2>
+    <div class="case-box">
+      <div class="case-row"><span class="case-label">Situazione</span><p class="placeholder">[Da personalizzare: descrizione anonima dell'azienda e del contesto di partenza, es. dimensione, ettari, criticità riscontrata.]</p></div>
+      <div class="case-row"><span class="case-label">Intervento</span><p class="placeholder">[Da personalizzare: descrizione sintetica delle azioni messe in campo.]</p></div>
+      <div class="case-row"><span class="case-label">Risultato</span><p class="placeholder">[Da personalizzare: beneficio ottenuto, espresso in modo verificabile e coerente con la normativa sulla comunicazione finanziaria.]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SIAMO -->
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">Chi siamo</span>
+    <h2 class="section-title">Chi siamo</h2>
+    <div class="profile-row">
+      <div class="photo-slot">FOTO<br>CONSULENTE</div>
+      <div class="profile-text">
+        <h3>Gabriele</h3>
+        <p class="role">Consulente Finanziario FIDEURAM — Intesa Sanpaolo Private Banking</p>
+        <p class="placeholder">[Da personalizzare: anni di esperienza nel settore, percorso professionale.]</p>
+      </div>
+    </div>
+    <p class="body-text" style="margin-top:18px;"><b>Metodo di lavoro:</b> <span class="placeholder">[Da personalizzare: come si svolgono gli incontri, la frequenza dei follow-up, gli strumenti utilizzati.]</span></p>
+    <p class="body-text"><b>Filosofia:</b> <span class="placeholder">[Da personalizzare: i principi che guidano l'approccio alla consulenza.]</span></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="white">
+  <div class="wrap">
+    <span class="eyebrow">Domande frequenti</span>
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-item"><h3>A chi è rivolta la consulenza?</h3><p>A titolari e soci di aziende vitivinicole e cantine che vogliono organizzare meglio la gestione finanziaria dell'impresa e del proprio patrimonio personale.</p></div>
+    <div class="faq-item"><h3>Collaborate con il mio commercialista?</h3><p>Sì. Il confronto con commercialista, notaio e altri professionisti di fiducia dell'azienda fa parte del metodo di lavoro, per garantire coerenza su ogni aspetto.</p></div>
+    <div class="faq-item"><h3>Come funziona il primo incontro?</h3><p>È un colloquio conoscitivo, senza impegno, per capire la situazione dell'azienda e valutare insieme se e come possiamo essere utili.</p></div>
+    <div class="faq-item"><h3>Quanto costa?</h3><p>Il primo colloquio è gratuito. Eventuali costi dei servizi successivi vengono sempre illustrati ed espressamente concordati in anticipo, in piena trasparenza.</p></div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="light">
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Scopri come migliorare la gestione finanziaria della tua azienda.</h2>
+      <div class="phone-big">335 5493857</div>
+      <a class="cta-btn" href="tel:+393355493857">Chiama per una consulenza gratuita</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="wrap">
+  <div class="foot-lockup">Vendemmia del Patrimonio</div>
+  <div class="foot-grid">
+    <div><span class="k">Telefono</span>335 5493857</div>
+    <div><span class="k">Email</span><span class="placeholder">[inserisci email]</span></div>
+    <div><span class="k">LinkedIn</span><span class="placeholder">[inserisci link profilo]</span></div>
+    <div><span class="k">Informativa privacy</span><span class="placeholder">[inserisci link informativa privacy]</span></div>
+    <div><span class="k">Dati professionali</span><span class="placeholder">[inserisci n. iscrizione Albo Unico dei Consulenti Finanziari — OCF]</span></div>
+  </div>
+  <p class="disclaimer">Vendemmia del Patrimonio è un progetto informativo a cura di Gabriele, Consulente Finanziario FIDEURAM — Intesa Sanpaolo Private Banking. Messaggio con finalità puramente informativa e promozionale: non costituisce consulenza in materia di investimenti, offerta al pubblico né sollecitazione all'investimento. Per informazioni su servizi, costi e rischi si rimanda ai documenti informativi previsti dalla normativa applicabile. Testo da sottoporre all'ufficio compliance FIDEURAM prima della pubblicazione.</p>
+</footer>
+
+</body>
+</html>
