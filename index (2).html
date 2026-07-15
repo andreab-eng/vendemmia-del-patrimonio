@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Vendemmia del Patrimonio — Consulenza patrimoniale per viticoltori</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#3E1420;
+    --wine-2:#4E1A29;
+    --ink:#1A1A18;
+    --cream:#F7F5EF;
+    --stone:#8B8A82;
+    --gold:#B08D57;
+    --gold-dark:#8A6A3E;
+    --hairline:rgba(15,27,43,0.12);
+    --hairline-onwine:rgba(247,245,239,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:520px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:'Playfair Display', serif; font-weight:600; line-height:1.18; color:inherit;}
+  .eyebrow{
+    font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--gold-dark);
+  }
+  a{color:inherit;}
+
+  .emblem{display:block;}
+  .lockup{display:flex; align-items:center; gap:16px; margin-bottom:44px;}
+  .lockup-text{font-family:'Playfair Display', serif; font-size:14px; letter-spacing:0.06em; font-weight:600;}
+  .lockup-text .sub{display:block; font-family:'Inter'; font-size:10.5px; font-weight:400; letter-spacing:0.03em; color:var(--stone); margin-top:3px;}
+  .divider-v{width:1px; height:34px; background:var(--hairline-onwine);}
+
+  .hero{background:var(--wine); color:var(--cream); padding:40px 0 46px;}
+  .hero .lockup-text .sub{color:rgba(247,245,239,0.55);}
+  .hero h1{font-size:34px; margin:18px 0 18px; letter-spacing:-0.01em;}
+  .hero h1 em{font-style:italic; color:var(--gold);}
+  .hero p.lead{font-family:'Playfair Display', serif; font-style:italic; font-size:17px; font-weight:400; color:rgba(247,245,239,0.75); max-width:42ch; margin-bottom:8px;}
+
+  .rule{border:none; border-top:1px solid var(--hairline-onwine); margin:32px 0 0;}
+  .rule.light{border-top:1px solid var(--hairline);}
+
+  section{padding:52px 0;}
+  section.light{background:var(--cream);}
+  h2.section-title{font-size:24px; margin:12px 0 20px; letter-spacing:-0.01em;}
+  p.body-text{font-size:15px; color:#3A3A36; margin-bottom:14px;}
+
+  .question-list{list-style:none; margin-top:8px;}
+  .question-list li{
+    padding:18px 0; border-bottom:1px solid var(--hairline); font-size:15px; color:var(--ink);
+  }
+  .question-list li .q-num{font-family:'Playfair Display', serif; font-style:italic; color:var(--gold-dark); margin-right:10px; font-size:14px;}
+
+  .step{padding:24px 0; border-top:1px solid var(--hairline);}
+  .step:last-child{border-bottom:1px solid var(--hairline);}
+  .step .step-label{font-family:'Playfair Display', serif; font-style:italic; font-size:13px; color:var(--gold-dark); display:block; margin-bottom:6px;}
+  .step h3{font-size:18px; font-weight:600; margin-bottom:6px;}
+  .step p{font-size:14.5px; color:#3A3A36;}
+
+  .stat-row{margin-top:24px;}
+  .stat{padding:18px 0; border-top:1px solid var(--hairline);}
+  .stat:last-child{border-bottom:1px solid var(--hairline);}
+  .stat .num{font-family:'Playfair Display', serif; font-size:19px; color:var(--wine); display:block; margin-bottom:3px;}
+  .stat .label{font-size:13px; color:var(--stone); line-height:1.4;}
+
+  .logo-section{background:#fff; padding:36px 0; text-align:center; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);}
+  .logo-big-slot{
+    max-width:280px; height:64px; margin:16px auto 0; border:1px dashed var(--stone); border-radius:2px;
+    display:flex; align-items:center; justify-content:center; font-size:11.5px; color:var(--stone); line-height:1.5; padding:8px;
+  }
+
+  footer{padding:34px 0 40px; background:var(--wine); color:rgba(247,245,239,0.5);}
+  footer p{font-size:10.5px; line-height:1.7;}
+  footer .foot-lockup{margin-bottom:18px; color:rgba(247,245,239,0.85); font-family:'Playfair Display'; font-size:13px; letter-spacing:0.05em;}
+
+  @media (min-width:600px){
+    .hero h1{font-size:44px;}
+    .wrap{padding:0 32px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="lockup">
+      <svg class="emblem" width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblema Vendemmia del Patrimonio">
+        <circle cx="22" cy="22" r="21" fill="none" stroke="#B08D57" stroke-width="1"/>
+        <circle cx="22" cy="22" r="17.5" fill="none" stroke="#B08D57" stroke-width="0.5" opacity="0.5"/>
+        <!-- tralcio e foglia -->
+        <path d="M22 12 C 20 15, 24 16, 22 19" fill="none" stroke="#B08D57" stroke-width="0.9"/>
+        <path d="M22 12 C 17 10.5, 14.5 13, 16 16.5 C 18.5 15.5, 21 14, 22 12 Z" fill="none" stroke="#B08D57" stroke-width="0.9"/>
+        <!-- grappolo: cerchi a piramide -->
+        <circle cx="22" cy="20.5" r="2" fill="#B08D57"/>
+        <circle cx="18.7" cy="23.2" r="2" fill="#B08D57"/>
+        <circle cx="25.3" cy="23.2" r="2" fill="#B08D57"/>
+        <circle cx="20.8" cy="26" r="2" fill="#B08D57"/>
+        <circle cx="23.4" cy="26" r="2" fill="#B08D57"/>
+        <circle cx="22" cy="28.8" r="2" fill="#B08D57"/>
+      </svg>
+      <div class="lockup-text">VENDEMMIA&nbsp;DEL&nbsp;PATRIMONIO<span class="sub">Consulenza patrimoniale per viticoltori</span></div>
+      <div class="divider-v"></div>
+      <!-- SOSTITUIRE con <img src="logo-fideuram.png"> il logo ufficiale FIDEURAM -->
+      <div style="font-size:9px; letter-spacing:0.08em; color:rgba(247,245,239,0.45); text-transform:uppercase; line-height:1.5;">FIDEURAM<br>Private Banking</div>
+    </div>
+
+    <span class="eyebrow">Dopo la vendemmia, la gestione del capitale</span>
+    <h1>Il ricavato della tua cantina merita la stessa cura riposta nel <em>coltivarla</em></h1>
+    <p class="lead">Un percorso di consulenza dedicato a chi ha ceduto, fuso o affidato ad altri la propria azienda vitivinicola.</p>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">La situazione</span>
+    <h2 class="section-title">Le domande che si pongono davvero i viticoltori dopo un liquidity event</h2>
+    <p class="body-text">Che si tratti della cessione della cantina, di un ramo d'azienda, della fusione con un altro gruppo vitivinicolo o dell'ingresso di un fondo, la vendita è solo il primo passaggio. Quello che accade dopo è altrettanto decisivo.</p>
+    <ul class="question-list">
+      <li><span class="q-num">I.</span>Dove colloco una liquidità così importante, senza lasciarla ferma né esporla a un unico rischio?</li>
+      <li><span class="q-num">II.</span>Come proteggo il potere d'acquisto di questo capitale nei prossimi 10-20 anni?</li>
+      <li><span class="q-num">III.</span>Come organizzo il passaggio ai familiari, in modo ordinato e senza sorprese fiscali?</li>
+      <li><span class="q-num">IV.</span>Ha senso reinvestire nel settore vitivinicolo, magari in nuovi vigneti, o è il momento di diversificare?</li>
+      <li><span class="q-num">V.</span>Chi mi segue con continuità, oltre la firma dell'atto di cessione?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="light" style="background:#fff;">
+  <div class="wrap">
+    <span class="eyebrow">Come lavoriamo insieme</span>
+    <h2 class="section-title">Un percorso in tre fasi</h2>
+
+    <div class="step">
+      <span class="step-label">Prima fase</span>
+      <h3>Fotografia della situazione</h3>
+      <p>Analizziamo insieme l'importo, i tempi dell'operazione e gli impegni familiari e aziendali già assunti.</p>
+    </div>
+    <div class="step">
+      <span class="step-label">Seconda fase</span>
+      <h3>Struttura su misura</h3>
+      <p>Costruiamo una gestione della liquidità coerente con i tuoi orizzonti temporali: una parte prudente e disponibile, una pensata per crescere nel tempo.</p>
+    </div>
+    <div class="step">
+      <span class="step-label">Terza fase</span>
+      <h3>Continuità nel tempo</h3>
+      <p>Il patrimonio si segue, non si abbandona dopo la firma: revisioni periodiche, aggiornamenti fiscali e successori.</p>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <span class="eyebrow">Perché FIDEURAM Private Banking</span>
+    <h2 class="section-title">La solidità di un grande gruppo, la vicinanza di un consulente di territorio</h2>
+    <p class="body-text">Faccio parte di FIDEURAM — Intesa Sanpaolo Private Banking, la realtà italiana di riferimento per la gestione dei grandi patrimoni privati. Seguo personalmente ogni fase del percorso, come unico referente, con attenzione alle dinamiche del settore vitivinicolo.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="num">Primo gruppo in Italia</span><span class="label">per masse gestite nel private banking</span></div>
+      <div class="stat"><span class="num">Un unico referente</span><span class="label">lo stesso consulente per tutta la relazione</span></div>
+      <div class="stat"><span class="num">Radicamento territoriale</span><span class="label">conoscenza diretta del settore vitivinicolo italiano</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="logo-section wrap">
+  <span class="eyebrow">Gruppo di appartenenza</span>
+  <div class="logo-big-slot">
+    Inserire qui il logo ufficiale FIDEURAM — Intesa Sanpaolo Private Banking
+  </div>
+</div>
+
+<footer class="wrap">
+  <div class="foot-lockup">Vendemmia del Patrimonio</div>
+  <p>Progetto informativo a cura di Gabriele, Consulente Finanziario FIDEURAM — Intesa Sanpaolo Private Banking. Messaggio con finalità puramente informativa e promozionale: non costituisce consulenza in materia di investimenti, offerta al pubblico né sollecitazione all'investimento. Per informazioni su servizi, costi e rischi si rimanda ai documenti informativi previsti dalla normativa applicabile. Testo da sottoporre all'ufficio compliance FIDEURAM prima della pubblicazione.</p>
+</footer>
+
+</body>
+</html>
